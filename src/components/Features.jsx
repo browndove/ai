@@ -15,17 +15,17 @@ const Features = () => {
         </Text>
       </View>
       
-      <View style={styles.content}>
+      <View style={styles.content2}>
         <View style={styles.view2}>
         <Image source={require('../../assets/dalle.png')} style={styles.image} />
         <Text style={styles.imagetext}>DALL-E</Text>
         </View>
         <Text style={styles.box2}>
         
-DALL·E, developed by OpenAI, generates images from text, enabling creative visual synthesis.
+DALL-E, developed by OpenAI, generates images from text, enabling creative visual synthesis.
         </Text>
       </View>
-      <View style={styles.content}>
+      <View style={styles.content3}>
         <View style={styles.view2}>
         <Image source={require('../../assets/photo.jpg')} style={styles.image} />
         <Text style={styles.imagetext}>Smart Ai</Text>
@@ -62,6 +62,22 @@ const styles = StyleSheet.create({
         
 
     },
+    content2:{
+        
+        backgroundColor: '#DA70D6',
+        paddingHorizontal: 8,
+        marginVertical: 5,
+        borderRadius: 10,
+        
+
+    },
+    content3:{
+        
+        backgroundColor: '#00FFFF',
+        paddingHorizontal: 8,
+        marginVertical: 5,
+        borderRadius: 10,
+    },
     view2:{
         flexDirection: 'row',
         alignItems: 'center',   
@@ -83,8 +99,8 @@ const styles = StyleSheet.create({
     },
     box2:{
         fontSize: 16,
-        color: '#FFE4C4',
-        fontWeight: '300',
+        color: 'white',
+        fontWeight: '400',
         marginBottom: 10,
     }
 
