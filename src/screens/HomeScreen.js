@@ -1,46 +1,39 @@
-import { SafeAreaView, StyleSheet, Text, View ,Image} from 'react-native'
+import { SafeAreaView, StyleSheet, Text, View ,Image, ScrollView} from 'react-native'
 import React,{useState} from 'react'
 import Features from '../components/Features'
 import { trialcontents } from '../constants'
 
-
 const HomeScreen = () => {
     const [messages, SetMessages] = useState(trialcontents)
-  return (
-    <View style={styles.container}>
-      <SafeAreaView>
-        <View  style={styles.subcon}>
-      <Image source={require('../../assets/tech.jpg')} style={styles.image} />
-      </View>
+    
+    return (
+        <View style={styles.container}>
+            <SafeAreaView>
+                <View style={styles.subcon}>
+                    <Image source={require('../../assets/tech.jpg')} style={styles.image} />
+                </View>
 
-    {/* message feature */}
-{
-    messages.length>0? (
-        <View style={styles.container2}>
-            <Text style={styles.textassist}>Assistant</Text>
-            <View style={styles.maindev}>
-            
-            </View>
+                {/* Assistant and main content */}
+                <View style={styles.contentContainer}>
+                    <Text style={styles.textAssist}>Assistant</Text>
+                    {messages.length > 0 ? (
+                        <Text>Hello world</Text>
+                    ) : (
+                        <Features />
+                    )}
+                </View>
+            </SafeAreaView>
         </View>
-
-        
-
-    ) : (
-        <Features />
     )
-}
-
-      </SafeAreaView>
-    </View>
-  )
 }
 
 export default HomeScreen
 
 const styles = StyleSheet.create({
     container:{
-        flex:1,
-        backgroundColor: 'white'
+        height: '100%',
+        backgroundColor: 'white',
+        pertical: 56,
     },
     subcon:{
         flexDirection: 'row',
@@ -51,23 +44,12 @@ const styles = StyleSheet.create({
         height: 150,
         borderRadius: 160
     },
-    container:{
-        marginVertical: 56,
-    },
-    container2:{
-        marginVertical: 6,
-        
+    contentContainer:{
+       
         
     },
-    textassist:{
-        fontWeight: '700',
-        color: 'black',
-        marginLeft: 30,
-        fontSize: 20
-    },
-    maindev:{
-        height: '58%',
-        backgroundColor: '#f6f3e7',
-        
-    },
+    
+   
+    
+    
 })
